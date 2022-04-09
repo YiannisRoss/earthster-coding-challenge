@@ -1,0 +1,22 @@
+<h1> New invitation placeholder view </h1>
+
+
+<%= form_with model: @invitation, url: cycle_invitations_path(@cycle) do |f| %>
+
+  <div class="field">
+    <%= f.label :customer_email %><br />
+    <%= f.text_field :customer_email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :message %><br>
+    <%= f.text_field :message %>
+  </div>
+
+  <%= f.hidden_field :cycle_id, :value => @cycle.id%>
+
+  <div class="actions">
+    <%= f.submit "Submit" %>
+  </div>
+
+<% end %>
