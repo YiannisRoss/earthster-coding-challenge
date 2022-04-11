@@ -25,6 +25,6 @@ class InvitationsController < ApplicationController
 
 
     def invitation_params
-        params.require(:invitation).permit(:customer_email, :message, :cycle_id)
+        params.require(:invitation).permit(:customer_email, :message, :cycle_id, :display_name)
       end
 end
