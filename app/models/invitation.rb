@@ -9,6 +9,9 @@ class Invitation < ApplicationRecord
             self.display_name = customer_email.split('<')[0].chomp(' ')
             self.customer_email = customer_email.split('<')[1].chomp('>')
             
+        elsif customer_email.include?('.')
+            email_local_part = customer_email.split('@')[0]
+            self.display_name = email_local_part.split('.')[0] + ' ' + email_local_part.split('.')[1]
         end
       end
 
