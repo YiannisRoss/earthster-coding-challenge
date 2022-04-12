@@ -1,0 +1,21 @@
+<%= form_with model: @invitation, url: cycle_invitations_path(@cycle), :id => 'invitation-form' do |f| %>
+
+  <div class="field">
+    <h4 id='modal-header'>Share <%= @cycle.name %> cycle with a new Customer</h4>
+    
+    <%= f.text_field :customer_email, autofocus: true, placeholder: "E-mail address...*", required: true, pattern: '.*@+.*', title: "Email address" %>
+  </div>
+
+  <div class="field">
+    <h4> Want to include a message with the invite? </h4>
+    <%= f.text_field :message, placeholder: "Please enter your message..." %>
+  </div>
+
+  <%= f.hidden_field :cycle_id, :value => @cycle.id %>
+
+  <div class="actions">
+    <%= f.submit "SEND INVITATION", id: 'submit-button'%>
+  </div>
+
+
+<% end %>
