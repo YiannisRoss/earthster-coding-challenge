@@ -1,8 +1,10 @@
 
-    <h2> <%= @cycle.name %> </h2>
+    
 
 
 <%= form_with model: @invitation, url: cycle_invitations_path(@cycle) do |f| %>
+
+  <h3 id='modal-header'>Share <%= @cycle.name %> cycle with a new Customer</h3>
 
   <div class="field">
     <%= f.label :customer_email %><br />
@@ -17,7 +19,7 @@
   <%= f.hidden_field :cycle_id, :value => @cycle.id %>
 
   <div class="actions">
-    <%= f.submit "Submit" %>
+    <%= f.submit "SEND INVITATION", id: 'submit-button'%>
   </div>
 
 
