@@ -4,7 +4,8 @@ class Invitation < ApplicationRecord
 
     before_validation :sanitize_email_field
     
-    private
+      private
+
       def sanitize_email_field
         email_local_part = customer_email.split('@')[0]
 
@@ -14,13 +15,13 @@ class Invitation < ApplicationRecord
             
         elsif email_local_part.include?('.')
 
-            email_local_part = customer_email.split('@')[0]
+            email_local_part = customer_email.split('@')[0].tr("0-9", "")
 
             #this loop is responsible for displaying the name of email local parts like "john.r.smith@gmail.com"
             i = 0
-            display_name = email_local_part.split('.')[0]
+            display_name = email_local_part.split('.')[0].capitalize
             while i < email_local_part.split('.').length - 1
-                display_name = display_name + ' ' + email_local_part.split('.')[i + 1]
+                display_name = display_name + ' ' + email_local_part.split('.')[i + 1].capitalize
                 i = i+1
             end
 
