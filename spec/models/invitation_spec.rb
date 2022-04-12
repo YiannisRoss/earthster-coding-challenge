@@ -23,4 +23,3 @@ RSpec.describe Invitation, type: :model do
     end
   end
 end
-

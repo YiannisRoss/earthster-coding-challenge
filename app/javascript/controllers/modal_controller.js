@@ -5,7 +5,6 @@ export default class extends Controller {
   static classes = ['hidden']
 
   connect() {
-
     this.popupTarget.openModal = this.open.bind(this);
     this.popupTarget.closeModal = this.close.bind(this)
     this.isOpen = !this.popupTarget.classList.contains(this.hiddenClass);
