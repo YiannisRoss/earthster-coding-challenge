@@ -9,7 +9,7 @@
   <div class="field">
     <h4 id='modal-header'>Share <%= @cycle.name %> cycle with a new Customer</h4>
     
-    <%= f.email_field :customer_email, autofocus: true, placeholder: "E-mail address...*" %>
+    <%= f.text_field :customer_email, autofocus: true, placeholder: "E-mail address...*", required: true, pattern: '.*@+.*' %>
   </div>
 
   <div class="field">
