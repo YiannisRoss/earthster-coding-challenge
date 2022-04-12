@@ -1,0 +1,5 @@
+
+//used getElementsByClassName() because I didn't want to disrupt the original structure too much, 
+//otherwise I would switch to IDs
+
+document.getElementsByClassName('modal__content')[0].innerHTML = `<%= render :partial => 'invitations/form', :locals => { :cycle =>@cycle } %>`
