@@ -18,12 +18,56 @@
   border-radius: 3px;
   width: 100%;
   max-width: 20rem;
+  height: 40%;
   padding: 1rem;
   background-color: #262626;
 }
 
 .modal__content {
+  height: 100%;
+  width: 100%;
 }
+
+  .field{
+    display: flex;
+    flex-direction: column;
+  }
+  #invitation-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+  }
+  
+  #invitation_customer_email {
+    border-radius: 25px;
+    width: 100%;
+    height: 35px;
+
+  }
+
+  #invitation_message {
+    border-radius: 5px;
+    width: 100%;
+    height: 40px;
+
+  }
+
+
+
+  .actions {
+    display: flex;
+    justify-content: center;
+
+  }
+
+  #submit-button {
+    
+      background-color: #21c69f;
+      border-radius: 25px;
+      width: 80%;
+      height: 35px;
+  }
 
 .modal__close-button {
   position: absolute;
